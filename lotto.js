@@ -1,3 +1,4 @@
+alert("Hi")
 // create random number function
 
 function createRandomNum( n ) {
@@ -6,18 +7,29 @@ function createRandomNum( n ) {
     return random
 }
 
-function generateNums (firstNumbersCount,secondNumbersCount){
+// Main function template 
+
+function generateNums (firstNumbersCount, numberOfNumbers, secondNumbersCount){
+
+  // list for main numbers and another for extra if needed
     let newNum = [];
     let luckyNum = [];
-    
+
+  // a condition in case no need for second number
+  
     if (typeof(secondNumbersCount)=='undefined'){
       secondNumbersCount = 0;
     }
 
-    for (let i = 0 ; i < 5 ; i ++){
+  // fill newNum list for main numbers with custom digits
+  
+    for (let i = 0 ; i < numberOfNumbers ; i ++){
         newNum.push( createRandomNum (firstNumbersCount) );
     }
 
+  // fill luckyNum list for secondary numbers with condition
+  // not to repeat same number twice
+  
     for (let i = 0 ; i < 2 ; i ++){
         firstPick = createRandomNum (secondNumbersCount);
         if (luckyNum.includes( firstPick )){
@@ -29,18 +41,20 @@ function generateNums (firstNumbersCount,secondNumbersCount){
     }
 
   // combine two lists
+  
     return newNum.concat( luckyNum ) ;
 }
 
 // use function customised for each game
 // for euro millions slice five numbers and last two for lucky nums
 
-const euroMillionsMain = generateNums ( 50 , 12 ).slice ( 0 , 5 ).toLocaleString();
-const euroMillionsLucky = generateNums ( 50 , 12 ).slice ( 5 , 8 ).toLocaleString();
+let euroMillionsMain = generateNums ( 50 , 5 , 12 ).slice ( 0 , 5 ).toLocaleString();
+
+let euroMillionsLucky = generateNums ( 50 , 5 , 12 ).slice ( 5 , 8 ).toLocaleString();
 
 // for lotto there arent any lucky nums
 
-const lottoNumbers = generateNums ( 59 ).slice ( 0 , 6 ).toLocaleString();
+let lottoNumbers = generateNums ( 59 ).slice ( 0 , 6 ).toLocaleString();
 
 
 let lotto = lottoNumbers;
@@ -48,12 +62,10 @@ let euroMillions = euroMillionsMain + ' ' + euroMillionsLucky
 let setForLife = 
 
 function runEuroMillions(){
-    document.querySelector('.numbers').innerHTML = euroMillions;
+    document.querySelector('#euro').innerHTML = euroMillions;
 }
 
 function runlotto(){
-    document.querySelector('.numbers').innerHTML = lotto;
+    document.querySelector('#lotto').innerHTML = lotto;
 }
-
-
 
