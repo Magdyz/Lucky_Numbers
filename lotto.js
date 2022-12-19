@@ -6,32 +6,54 @@ function createRandomNum( n ) {
     return random
 }
 
-function generateNums (){
+function generateNums (firstNumbersCount,secondNumbersCount){
     let newNum = [];
     let luckyNum = [];
+    
+    if (typeof(secondNumbersCount)=='undefined'){
+      secondNumbersCount = 0;
+    }
 
     for (let i = 0 ; i < 5 ; i ++){
-        let fistPickMain = createRandomNum ( 50 );
-        if (newNum.includes( fistPickMain )){
-            fistPickMain = createRandomNum ( 50 );
-            newNum.push( fistPickMain );
-        } else {
-            newNum.push( fistPickMain );
-        }
+        newNum.push( createRandomNum (firstNumbersCount) );
     }
 
     for (let i = 0 ; i < 2 ; i ++){
-        let firstPick = createRandomNum (12);
+        firstPick = createRandomNum (secondNumbersCount);
         if (luckyNum.includes( firstPick )){
-            firstPick = createRandomNum (12);
+            firstPick = createRandomNum (secondNumbersCount);
             luckyNum.push( firstPick );
         } else {
             luckyNum.push( firstPick );
         }
     }
 
-    let result = newNum.concat(luckyNum);
-
-    document.querySelector('.numbers').innerHTML = result.join(' ');
+  // combine two lists
+    return newNum.concat( luckyNum ) ;
 }
+
+// use function customised for each game
+// for euro millions slice five numbers and last two for lucky nums
+
+const euroMillionsMain = generateNums ( 50 , 12 ).slice ( 0 , 5 ).toLocaleString();
+const euroMillionsLucky = generateNums ( 50 , 12 ).slice ( 5 , 8 ).toLocaleString();
+
+// for lotto there arent any lucky nums
+
+const lottoNumbers = generateNums ( 59 ).slice ( 0 , 6 ).toLocaleString();
+
+
+let lotto = lottoNumbers;
+let euroMillions = euroMillionsMain + ' ' + euroMillionsLucky
+let setForLife = 
+
+function runEuroMillions(){
+    document.querySelector('.numbers').innerHTML = euroMillions;
+}
+
+function runlotto(){
+    document.querySelector('.numbers').innerHTML = lotto;
+}
+
+
 
