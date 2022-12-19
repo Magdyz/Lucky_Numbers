@@ -62,10 +62,10 @@ let euroMillions = euroMillionsMain + ' ' + euroMillionsLucky
 let setForLife = 
 
 function runEuroMillions(){
-    document.querySelector('#euro').innerHTML = euroMillions;
+    document.querySelector('.numbers').innerHTML = euroMillions;
 }
 
 function runlotto(){
-    document.querySelector('#lotto').innerHTML = lotto;
+    document.querySelector('.numbers').innerHTML = lotto;
 }
 
