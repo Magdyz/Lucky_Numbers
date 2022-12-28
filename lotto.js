@@ -1,4 +1,3 @@
-alert("Hi")
 
 // generate random integer number
 
