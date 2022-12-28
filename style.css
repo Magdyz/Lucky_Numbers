@@ -1,7 +1,10 @@
 .buttons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: fit-content;
+    flex-flow: nowrap;
+    flex-wrap: wrap;
 }
 
 .row.container.text-center {
@@ -48,5 +51,10 @@ h1.titleLucky {
     font-family: inherit;
     font-variant: small-caps;
     font-size: xxx-large;
+}
+
+.container.position-absolute.top-50.start-50.translate-middle {
+    width: 90%;
+    height: fit-content;
 }
 
