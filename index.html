@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EuroMillions Number Generator</title>
+    <link rel="stylesheet" href="style.css">
     <script src="lotto.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
+        integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -22,15 +25,23 @@
                 <h1>EuroMillions Number Generator</h1>
             </div>
         </div>
-        <div class="row text-center p-4">
-            <div class="col align-self-center">
-                <button type="button" class="btn btn-primary btn-lg" onclick="runEuroMillions()">EuroMillions</button>
+        <div class="buttons">
+            <div class="row text-center p-4">
+                <div class="col align-self-center">
+                    <button type="button" class="btn btn-primary btn-lg" id="euro">EuroMillions</button>
+                </div>
             </div>
-        </div>
-        <div class="row text-center p-4">
-            <div class="col align-self-center">
-                <button type="button" class="btn btn-primary btn-lg" onclick="runlotto()">Lotto</button>
+            <div class="row text-center p-4">
+                <div class="col align-self-center">
+                    <button type="button" class="btn btn-primary btn-lg" id="lotto">Lotto</button>
+                </div>
             </div>
+            <div class="row text-center p-4">
+                <div class="col align-self-center">
+                    <button type="button" class="btn btn-primary btn-lg" id="set">set</button>
+                </div>
+            </div>
+
         </div>
         <div class="row text-center p-4">
             <div class="col align-self-center">
@@ -39,6 +50,23 @@
         </div>
     </div>
     </div>
+
+    <script>
+
+        $("#euro").click(() => {
+            $(".numbers").html(euro())
+        }
+        )
+        $("#lotto").click(() => {
+            $(".numbers").html(lotto())
+        }
+        )
+        $("#set").click(() => {
+            $(".numbers").html(setForLife())
+        }
+        )
+
+    </script>
 </body>
 
 </html>
