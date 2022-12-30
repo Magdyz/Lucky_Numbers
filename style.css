@@ -1,3 +1,8 @@
+
+body {
+    font-family: 'Aclonica', sans-serif;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -40,6 +45,8 @@ button#set, #lotto, #euro {
     color: white;
     border: none;
     font-variant: small-caps;
+    font-size: 39px;
+    font-family: 'Luckiest Guy';
 }
 
 h1.titleLucky {
