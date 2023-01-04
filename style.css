@@ -95,3 +95,9 @@ div#titleLucky {
 .row.text-center.p-4 {
     margin: -23px;
 }
+
+button#set:hover, #lotto:hover, #euro:hover {
+    opacity: 96%;
+    filter: hue-rotate(91deg);
+    zoom: 105%;
+}
