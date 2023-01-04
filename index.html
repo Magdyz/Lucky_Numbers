@@ -14,60 +14,66 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.slim.js"
         integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="webpageBody">
+        <div class="container position-absolute top-50 start-50 translate-middle">
+            <div class="row container text-center">
+                <div class="col align-self-center" id="titleLucky">
+                    <h1 class="titleLucky">Lucky Numbers Generator</h1>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="row text-center p-4">
+                    <div class="col align-self-center">
+                        <button type="button" class="btn btn-primary btn-lg" id="euro">EuroMillions</button>
+                    </div>
+                </div>
+                <div class="row text-center p-4">
+                    <div class="col align-self-center">
+                        <button type="button" class="btn btn-primary btn-lg" id="lotto">Lotto</button>
+                    </div>
+                </div>
+                <div class="row text-center p-4">
+                    <div class="col align-self-center">
+                        <button type="button" class="btn btn-primary btn-lg" id="set">set</button>
+                    </div>
+                </div>
 
-    <div class="container position-absolute top-50 start-50 translate-middle">
-        <div class="row container text-center">
-            <div class="col align-self-center">
-                <h1 class="titleLucky">Lucky Numbers Generator</h1>
+            </div>
+            <div class="row text-center p-4">
+                <div class="col align-self-center">
+                    <p class="numbers">49 33 29 36 32 6 12</p>
+                </div>
             </div>
         </div>
-        <div class="buttons">
-            <div class="row text-center p-4">
-                <div class="col align-self-center">
-                    <button type="button" class="btn btn-primary btn-lg" id="euro">EuroMillions</button>
-                </div>
-            </div>
-            <div class="row text-center p-4">
-                <div class="col align-self-center">
-                    <button type="button" class="btn btn-primary btn-lg" id="lotto">Lotto</button>
-                </div>
-            </div>
-            <div class="row text-center p-4">
-                <div class="col align-self-center">
-                    <button type="button" class="btn btn-primary btn-lg" id="set">set</button>
-                </div>
-            </div>
 
-        </div>
-        <div class="row text-center p-4">
-            <div class="col align-self-center">
-                <p class="numbers"></p>
-            </div>
-        </div>
+
+        <script>
+
+            $("#euro").click(() => {
+                $(".numbers").html(euro())
+            }
+            )
+            $("#lotto").click(() => {
+                $(".numbers").html(lotto())
+            }
+            )
+            $("#set").click(() => {
+                $(".numbers").html(setForLife())
+            }
+            )
+
+        </script>
+
     </div>
-    </div>
-
-    <script>
-
-        $("#euro").click(() => {
-            $(".numbers").html(euro())
-        }
-        )
-        $("#lotto").click(() => {
-            $(".numbers").html(lotto())
-        }
-        )
-        $("#set").click(() => {
-            $(".numbers").html(setForLife())
-        }
-        )
-
-    </script>
 </body>
 
 </html>
