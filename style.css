@@ -25,17 +25,6 @@ body {
     margin-top: 10%;
 }
 
-p.numbers {
-    font-family: 'Aclonica', sans-serif;
-    font-size: 1.7em;
-    color: white;
-    : 15px;
-    width: auto;
-    padding: 10px;
-    background: #5fad41;
-    font-weight: bolder;
-    border-radius: 21px;
-}
 
 .col.align-self-center {
     display: flex;
@@ -49,7 +38,9 @@ button {
     color: #0094C6;
 }
 
-button#set, #lotto, #euro {
+button#set,
+#lotto,
+#euro {
     background: #F5BE51;
     color: white;
     border: none;
@@ -96,8 +87,26 @@ div#titleLucky {
     margin: -23px;
 }
 
-button#set:hover, #lotto:hover, #euro:hover {   
-    opacity: 96%;   
-    filter: hue-rotate(91deg);    
+button#set:hover,
+#lotto:hover,
+#euro:hover {
+    opacity: 96%;
+    filter: hue-rotate(91deg);
     zoom: 105%;
+}
+
+p.numberDigits {
+    border-radius: 48px;
+    color: white;
+    padding: 4px;
+    font-size: 1.4em;
+    margin-right: 3px;
+    font-weight: bolder;
+    width: 37px;
+    height: auto;
+
+}
+
+.digits {
+    display: flex;
 }
