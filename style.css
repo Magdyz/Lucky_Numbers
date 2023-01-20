@@ -109,11 +109,11 @@ button#set:hover,
 p.numberDigits {
     border-radius: 48px;
     color: white;
-    padding: 4px;
+    padding: 0.4rem;
     font-size: 1.4em;
     margin-right: 3px;
     font-weight: bolder;
-    width: 37px;
+    width: 2.6rem;
     height: auto;
 
 }
