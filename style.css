@@ -8,6 +8,17 @@ body {
     height: 100%;
 }
 
+.imageContainer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+img.androidApp {
+    width: 10rem;
+    margin: 1rem;
+    opacity: 0.9;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
